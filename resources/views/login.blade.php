@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - CloseCall</title>
+    <title>Login - CloseCall</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
@@ -19,7 +19,7 @@
         }
         .left-side {
             background: url('/image/background.png') no-repeat center center;
-            background-size: cover;
+            background-size:cover;
         }
         .input-field {
             border: 1px solid #ccc;
@@ -32,7 +32,7 @@
         .input-field:focus {
             border-color: #38b2ac;
         }
-        .btn-register {
+        .btn-login {
             background: #009688;
             color: white;
             padding: 12px;
@@ -43,7 +43,7 @@
             margin-left: 20%;
             margin-right: 20%;
         }
-        .btn-register:hover {
+        .btn-login:hover {
             background: #00796b;
         }
         .social-btn {
@@ -68,31 +68,29 @@
         <span class="text-white text-2xl font-bold">CloseCall</span>
     </div>
 </div>
+
         <!-- Right Side (Form) -->
         <div class="bg-white p-10 flex flex-col justify-center">
-            <h1 class="text-2xl font-bold mb-2">Welcome to CloseCall!</h1>
-            <p class="font-semibold mb-1" style="font-size: 20px">Register</p>
+            <h1 class="text-2xl font-bold mb-2">Welcome Back to CloseCall!</h1>
+            <p class="font-semibold mb-1" style="font-size: 20px">Login</p>
 
-            <form action="{{ route('register') }}" class="space-y-4">
+            <form action="{{ route('login') }}" class="space-y-4" >
                 @csrf
-                <input type="text" name="first_name" placeholder="First Name" class="input-field" required>
-                <input type="text" name="last_name" placeholder="Last Name" class="input-field" required>
-                <input type="email" name="email" placeholder="Email or Phone" class="input-field" required>
-                <input type="text" name="country" placeholder="Country" class="input-field" required>
+                <input type="text" name="email" placeholder="Email or Phone" class="input-field" required>
                 <input type="password" name="password" placeholder="Password" class="input-field" required>
-                <input type="password" name="password_confirmation" placeholder="Password Verify" class="input-field" required>
 
-                <label class="flex items-center space-x-2 text-sm">
-                    <input type="checkbox" name="terms" class="h-4 w-4" required>
-                    <span>I have read and accepted the terms and conditions</span>
-                </label>
+                <div class="flex justify-end text-sm">
+                    <a href="" class="text-gray-600 hover:text-cyan-700">
+                        Forgot your password?
+                    </a>
+                </div>
 
-                <button type="submit" class="btn-register">Register</button></a>
+                <button type="submit" class="btn-login">Login</button>
             </form>
 
             <p class="mt-4 text-sm text-gray-600" style="text-align: center">
-                Already have an account?
-                <a href="{{ route('login') }}" class="text-cyan-700 font-medium">Login</a>
+                Don’t have an account?
+                <a href="{{ route('register') }}" class="text-cyan-700 font-medium">Sign up</a>
             </p>
 
             <div class="flex items-center my-6">
